@@ -21,18 +21,18 @@ import org.springframework.util.backoff.FixedBackOff;
 import java.util.HashMap;
 import java.util.Map;
 
-@Configuration
-@EnableKafka
+//@Configuration
+//@EnableKafka
 public class KafkaListenerConfiguration {
 
     private final AcknowledgingPaymentMessageListener paymentMessageListener;
 
-    @Autowired
+    //@Autowired
     public KafkaListenerConfiguration(AcknowledgingPaymentMessageListener paymentMessageListener) {
         this.paymentMessageListener = paymentMessageListener;
     }
 
-    @Bean
+    //@Bean
     public KafkaMessageListenerContainer<String, PaymentEvent> kafkaListenerContainer() {
 
         var containerProps = new ContainerProperties("payment-topic2");
